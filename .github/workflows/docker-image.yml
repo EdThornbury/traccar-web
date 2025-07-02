@@ -35,8 +35,9 @@ jobs:
       run: |
           docker buildx build --push \
           --platform linux/amd64,linux/arm64 \
+          -f modern/Dockerfile \
           --tag ${{ env.ACR_NAME }}.azurecr.io/traccar:v1 \
-          . 
+          modern
 
     - name: Log out from Azure
       run: az logout
