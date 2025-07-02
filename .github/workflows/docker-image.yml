@@ -1,9 +1,4 @@
-on:
-  push:
-    branches:
-      - master
-    paths:
-      - modern/**
+on: [push]
 
 name: Build & Push docker image to ACR
 
