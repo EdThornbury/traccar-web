@@ -19,6 +19,8 @@ Old web app for Traccar. It uses Sencha Ext JS framework. For more information o
 
 ## License
 
+Testing
+
 Modern app uses Apache License, Version 2.0 license.
 
 Legacy app uses The GNU General Public License v3.0 license.
