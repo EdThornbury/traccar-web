@@ -9,6 +9,8 @@ export default defineConfig((command, mode) => {
   return {
     server: {
       port: 3000,
+      host: true,
+      strictPort: true,
       proxy: {
         '/api/socket': `wss://${env.REACT_APP_URL_NAME}`,
         '/api': `https://${env.REACT_APP_URL_NAME}`,
@@ -27,7 +29,7 @@ export default defineConfig((command, mode) => {
         },
         manifest: {
           short_name: env.APP_NAME,
-          name: 'Tonbridge Traccar',
+          name: 'Eds Traccar',
           theme_color: '#000000',
           icons: [
             {
