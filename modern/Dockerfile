@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:18-alpine AS build
 
 WORKDIR /app
 
@@ -12,6 +12,13 @@ COPY . .
 
 RUN npm run build
 
-EXPOSE 3000
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
 
-CMD [ "serve", "-s", "build" ]
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
+# Uncomment the following line if you want to serve the build directory directly
+# This is useful if you want to use a different server like serve or http-server
+#CMD [ "serve", "-s", "build" ]
